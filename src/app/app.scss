@@ -1,0 +1,16 @@
+.header,.main,.footer {
+  padding: 1rem;  
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+}
+
+.nav {
+    width: fit-content;
+    border-right: 1px solid #ccc;
+    padding-inline: 1rem;
+}
+
+.copyright {
+  font-size: 0.8rem;
+  text-align: center;
+}

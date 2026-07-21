@@ -8,5 +8,7 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('angular-basic-intro Alberto');
+  title = 'Curso básico de Angular';
+  urlRepo = 'https://github.com/Alberto-SC-76/Angular_basic-lab.git'
+  dateUpdated = new Date().getFullYear();
 }
