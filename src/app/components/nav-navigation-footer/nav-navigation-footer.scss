@@ -1,0 +1,22 @@
+.nav-title {
+    font-size: 18px;
+    //font-weight: 700;
+    text-decoration: underline;
+    margin-bottom: 8px;
+}
+
+.nav {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: 1rem;    
+    padding-left: 1rem;
+    
+    a {
+        border-right: 1px solid #ccc;
+        padding-right: 1rem;
+        font-size: 14px;
+    }
+}
