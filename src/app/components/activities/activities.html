@@ -1,0 +1,35 @@
+
+<article>
+    <h2>Actividades</h2>
+    <h3 >Número de actividades: {{ activitys.length }}</h3>
+    <ul>
+        @for (activity of activitys; track activity.id) {
+        <li>
+            <span *ngIf="activity.ageCategory === 'adult'">👱‍♂️</span>
+            <span *ngIf="activity.ageCategory === 'family'">🧑‍🧑‍🧒‍🧒</span>
+            <span *ngIf="activity.ageCategory === 'child'">👦</span>
+            {{ activity.title }} | {{ activity.location }} | {{ activity.date | date: 'dd-MMM-yyyy' }}
+        </li>
+        }
+    </ul>
+    <!-- Actividades disponibles actualmente PUBLISHED -->
+    <h3>Actividades disponibles actualmente: {{ activitysPublished.length }}</h3>
+    <ul>
+        @for (activity of activitysPublished; track activity.id) {
+        <li>
+            @if(activity.ageCategory === 'adult') {
+            <span>👱‍♂️</span>
+            }
+    
+            @if(activity.ageCategory === 'family') {
+            <span>🧑‍🧑‍🧒‍🧒</span>
+            }
+    
+            @if(activity.ageCategory === 'child') {
+            <span>👦</span>
+            }
+            {{ activity.title }} | {{ activity.location }} | {{ activity.date | date: 'dd-MMM-yyyy' }}
+        </li>
+        }
+    </ul>
+</article>
