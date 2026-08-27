@@ -43,4 +43,9 @@ article:last-child {
     margin-bottom: 0;
 }
 
+.flex {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+}
 
