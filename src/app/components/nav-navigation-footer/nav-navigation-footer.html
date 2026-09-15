@@ -1,5 +1,12 @@
-<h3 class="nav-title">Enlaces</h3>
-<nav class="nav">
-  <a [href]="urlRepo" target="_blank" rel="noopener"> Repositorio GitHub </a>
-  <a [href]="urlAngular" target="_blank" rel="noopener"> Página de Angular </a>
-</nav>
+
+<div class="nav-container">
+  <nav class="nav">
+    <a [href]="urlRepo" target="_blank" rel="noopener"> Repositorio GitHub </a>
+    <a [href]="urlAngular" target="_blank" rel="noopener"> Página de Angular </a>
+  </nav>
+  
+  <nav class="nav">
+    <a routerLink="about">Acerca de</a>
+    <a routerLink="contact">Contacto</a>
+  </nav>  
+</div>

@@ -1,7 +1,6 @@
 
-<article>
-    <h2>Actividades</h2>
-    <lab-card-title [cardTitle]="'Actividades:' + ' ' + activitys.length"> </lab-card-title>
+<article>    
+    <lab-card-title [cardTitle]="'Actividades Publicadas: ' + activitys.length"> </lab-card-title>
     <ul>
         @for (activity of activitys; track activity.id) {
         <li class="flex">
@@ -15,10 +14,10 @@
             @if(activity.ageCategory === 'child') {
                 <lab-activity-age-category [ageCategory]="activity.ageCategory"></lab-activity-age-category>
             }        
-            <lab-activity-title [title]="activity.title"></lab-activity-title>
+            <lab-activity-title [title]="activity.title "></lab-activity-title>
             <lab-activity-location [location]="activity.location"></lab-activity-location> 
             <lab-activity-date [date]="activity.date "></lab-activity-date>
-            <lab-activity-price [price]="(activity.price | currency: activity.currency) ?? ''"></lab-activity-price> 
+            <lab-activity-price [price]="activity.price" [currency]="activity.currency"></lab-activity-price>
         </li>
         }
     </ul>
@@ -28,7 +27,7 @@
     <ul>
         @for (activity of activitysPublished; track activity.id) {
         <li class="flex">        
-            <lab-activity-title [title]="activity.title"></lab-activity-title>
+            <lab-activity-title [title]="activity.title.toUpperCase()"></lab-activity-title>
         </li>
         }
     </ul>
