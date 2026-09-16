@@ -1,29 +1,42 @@
-import { Component, NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 
-import { AboutComponent } from './routes/about-component/about-component';
-import { ContactComponent } from './routes/contact-component/contact-component';
-import { Activities } from './routes/activities/activities';
-
-
+import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
     path: '',
-    component: Activities
+    loadComponent: () =>
+      import('./routes/activities/activities').then((m) => m.Activities),
   },
   {
     path: 'about',
-    component: AboutComponent
+    loadComponent: () =>
+      import('./routes/about-component/about-component').then((m) => m.AboutComponent),
+     children: [      
+      {
+        path: 'history',
+        loadComponent: () =>
+          import('./routes/about-component/about-history/about-history').then(
+            (m) => m.AboutHistory
+          ),
+      },
+      {
+        path: 'team',
+        loadComponent: () =>
+          import('./routes/about-component/about-team/about-team').then(
+            (m) => m.AboutTeam
+          ),
+      },
+    ],
   },
   {
     path: 'contact',
-    component: ContactComponent
-  }
+    loadComponent: () =>
+      import('./routes/contact-component/contact-component').then((m) => m.ContactComponent),
+  },
 ];
 
-@NgModule({
+/* @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule { } */

@@ -2,7 +2,6 @@ import { CommonModule, DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { DATA } from './components/data-repository';
-import { Activities } from './components/activities/activities';
 import { Header } from './components/header/header';
 import { Footer } from './components/footer/footer';
 

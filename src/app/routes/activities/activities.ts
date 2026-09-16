@@ -1,12 +1,5 @@
 import { Component, Input } from '@angular/core';
-
 import { CommonModule } from '@angular/common';
-
-
-
-
-
-
 import { CardTitle } from '../../components/share/card-title/card-title';
 import { ActivityTitle } from '../../components/share/activity-title/activity-title';
 import { ActivityAgeCategory } from '../../components/share/activity-age-category/activity-age-category';
