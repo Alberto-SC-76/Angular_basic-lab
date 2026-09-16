@@ -5,7 +5,19 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () =>
+      import('./routes/home-component/home-component').then((m) => m.HomeComponent),
+  },
+  {
+    path: 'Activities',
+    loadComponent: () =>
       import('./routes/activities/activities').then((m) => m.Activities),
+  },
+  {
+    path: 'register',
+    loadComponent: () =>
+      import('./routes/auth/RegisterComponent/RegisterComponent').then(
+        (m) => m.RegisterComponent
+      ),
   },
   {
     path: 'about',
