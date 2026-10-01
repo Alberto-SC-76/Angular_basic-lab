@@ -1,10 +1,10 @@
 import { Component, type OnInit } from '@angular/core';
-import { RouterLink, RouterOutlet} from '@angular/router';
-
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'lab-home-component',
-  imports: [RouterOutlet, RouterLink],
+  standalone: true,
+  imports: [RouterOutlet],
   templateUrl: './home-component.html',
   styleUrl: './home-component.css',
 })

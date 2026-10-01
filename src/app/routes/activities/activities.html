@@ -1,3 +1,4 @@
+<button routerLink="/activities/create">Crear Actividad</button>
 
 <article>    
     <lab-card-title [cardTitle]="'Actividades Publicadas: ' + activitys.length"> </lab-card-title>
@@ -14,7 +15,7 @@
             @if(activity.ageCategory === 'child') {
                 <lab-activity-age-category [ageCategory]="activity.ageCategory"></lab-activity-age-category>
             }        
-            <lab-activity-title [title]="activity.title "></lab-activity-title>
+            <lab-activity-title [title]="activity.title " [routerLink]="[ activity.slug ]"></lab-activity-title>
             <lab-activity-location [location]="activity.location"></lab-activity-location> 
             <lab-activity-date [date]="activity.date "></lab-activity-date>
             <lab-activity-price [price]="activity.price" [currency]="activity.currency"></lab-activity-price>
@@ -27,8 +28,9 @@
     <ul>
         @for (activity of activitysPublished; track activity.id) {
         <li class="flex">        
-            <lab-activity-title [title]="activity.title.toUpperCase()"></lab-activity-title>
+            <lab-activity-title [title]="activity.title.toUpperCase()" [routerLink]="[ activity.slug ]"></lab-activity-title>
         </li>
         }
     </ul>
 </article>
+

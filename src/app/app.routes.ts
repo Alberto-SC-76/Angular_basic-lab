@@ -1,4 +1,3 @@
-
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
@@ -8,35 +7,47 @@ export const routes: Routes = [
       import('./routes/home-component/home-component').then((m) => m.HomeComponent),
   },
   {
-    path: 'Activities',
-    loadComponent: () =>
-      import('./routes/activities/activities').then((m) => m.Activities),
+    path: 'activities',
+    children: [
+      {
+        path: '',
+        loadComponent: () => import('./routes/activities/activities').then((m) => m.Activities),
+      },
+      {
+        path: 'create',
+        loadComponent: () =>
+          import('./routes/activities/component/create-activity/create-activity').then(
+            (m) => m.CreateActivity,
+          ),
+      },
+      {
+        path: ':slug',
+        loadComponent: () =>
+          import('./routes/activities/component/activity/activity').then((m) => m.Activity),
+      },
+    ],
   },
   {
     path: 'register',
     loadComponent: () =>
-      import('./routes/auth/RegisterComponent/RegisterComponent').then(
-        (m) => m.RegisterComponent
-      ),
+      import('./routes/auth/RegisterComponent/RegisterComponent').then((m) => m.RegisterComponent),
   },
   {
     path: 'about',
     loadComponent: () =>
       import('./routes/about-component/about-component').then((m) => m.AboutComponent),
-     children: [      
+    children: [
       {
         path: 'history',
         loadComponent: () =>
           import('./routes/about-component/about-history/about-history').then(
-            (m) => m.AboutHistory
+            (m) => m.AboutHistory,
           ),
       },
       {
         path: 'team',
         loadComponent: () =>
-          import('./routes/about-component/about-team/about-team').then(
-            (m) => m.AboutTeam
-          ),
+          import('./routes/about-component/about-team/about-team').then((m) => m.AboutTeam),
       },
     ],
   },

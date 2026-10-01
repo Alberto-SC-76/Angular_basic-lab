@@ -7,11 +7,21 @@ import { ActivityDate } from '../../components/share/activity-date/activity-date
 import { ActivityLocation } from '../../components/share/activity-location/activity-location';
 import { ActivityPrice } from '../../components/share/activity-price/activity-price';
 import { DATA } from '../../components/data-repository';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'lab-activities',
   standalone: true,
-  imports: [CommonModule, CardTitle, ActivityTitle, ActivityAgeCategory, ActivityLocation, ActivityDate, ActivityPrice],
+  imports: [
+    CommonModule,
+    RouterLink,
+    CardTitle,
+    ActivityTitle,
+    ActivityAgeCategory,
+    ActivityLocation,
+    ActivityDate,
+    ActivityPrice,
+  ],
   templateUrl: './activities.html',
   styleUrls: ['./activities.scss'],
 })
@@ -22,7 +32,7 @@ export class Activities {
 
   //@Input() title: string = '';
 
- /*  getTitle() {
+  /*  getTitle() {
     return 'Actividades Publicadas ' + this.activitys.length;
   } */
 }
