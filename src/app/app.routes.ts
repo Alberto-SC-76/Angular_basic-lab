@@ -3,9 +3,15 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
+  },
+  {
+    path: 'home',
     loadComponent: () =>
       import('./routes/home-component/home-component').then((m) => m.HomeComponent),
   },
+
   {
     path: 'activities',
     children: [
@@ -55,6 +61,11 @@ export const routes: Routes = [
     path: 'contact',
     loadComponent: () =>
       import('./routes/contact-component/contact-component').then((m) => m.ContactComponent),
+  },
+  {
+    path: '**',
+    redirectTo: 'home',
+    pathMatch: 'full',
   },
 ];
 
