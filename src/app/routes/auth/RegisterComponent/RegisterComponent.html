@@ -1,1 +1,21 @@
-<h2>🔏 Formulario de registro</h2>
+<h2>Registro</h2>
+
+<form [formGroup]="registerForm" >
+    <legend> 🔏 Formulario de registro</legend>
+    <fieldset>
+        <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" formControlName="name" >
+        <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" formControlName="email" required>
+        <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" formControlName="password" >
+
+        <label for="confirmPassword">Confirmar Contraseña:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" formControlName="confirmPassword" >
+        
+    </fieldset>
+
+    <pre>{{ registerForm.value | json }}</pre>
+    <button type="submit" (click)="onSubmit()" [disabled]="!registerForm.valid">Registrarse</button>
+    
+</form>

@@ -31,8 +31,8 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "node_modules/@picocss/pico/css/pico.min.css",
+            "styles": [  
+              "node_modules/@picocss/pico/css/pico.min.css",         
               "src/styles.scss"
             ]
           },
@@ -82,3 +82,4 @@
     }
   }
 }
+
